@@ -1,0 +1,470 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>JobHuntly — Landing</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --primary: #1B59A4; /* main brand blue */
+      --primary-light: #3E7DD1; /* hover / lighter */
+      --primary-dark: #123E73; /* darker for emphasis */
+      --secondary: #1BA4A0; /* teal supporting */
+      --accent: #FFC857; /* amber for highlights */
+      --success: #28B463;
+      --danger: #E74C3C;
+      --muted: #64748B;
+      --bg-light: #F8FAFC;
+    }
+    body{font-family:Inter, system-ui, Arial, sans-serif; color:#1E293B; background:var(--bg-light);} 
+    .hero{background:linear-gradient(180deg,#f7f8ff 0,#fff 60%);}
+    .accent{color:var(--primary);}    
+    .search-box{box-shadow:0 6px 20px rgba(23,23,65,0.06);border-radius:10px}
+    .category-card{border:1px solid #ececf3;border-radius:12px;padding:22px;background:#fff}
+    .feature-cta{background:linear-gradient(90deg,var(--primary),var(--primary-light));color:#fff;border-radius:16px;padding:36px} 
+    .job-card{border:1px solid #eef0fb;border-radius:10px;padding:18px;background:#fff}
+    .job-badge{font-size:.72rem;padding:.25rem .5rem;border-radius:999px;border:1px solid #eef0fb}
+    footer{background:#0f1724;color:#b6bfd0}
+.search-box {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  border: 2px solid var(--primary);   /* outer border */
+  background: var(--bg);
+  border-radius: 12px;
+  padding: 8px;                       /* internal spacing */
+  flex-wrap: nowrap;                  /* keep everything in one line */
+  min-width: 0;                       /* allow children to shrink */
+  box-sizing: border-box;
+}
+
+/* Left input group (icon + input) */
+.search-box .input-group {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex: 1 1 0;                        /* grow to fill available space */
+  min-width: 0;                       /* allow input to shrink */
+  padding-right: 12px;
+  border-right: 1px solid var(--divider); /* separator */
+}
+
+/* Search icon */
+.search-box .input-group-text {
+  background: transparent;
+  border: none;
+  color: var(--primary);
+  padding: 0 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Text input (no outer border because container has it) */
+.search-box .form-control {
+  border: none;
+  box-shadow: none;
+  outline: none;
+  padding: 8px 6px;
+  min-width: 0;          /* ensure it can shrink inside flex */
+}
+
+/* Location select (separated visually) */
+.search-box .form-select {
+  border: none;
+  background: transparent;
+  padding: 8px 10px;
+  border-right: 1px solid var(--divider); /* separator before button */
+  border-radius: 6px;
+  min-width: 180px;      /* change as needed */
+  max-width: 35%;
+}
+
+/* Button */
+.search-box .btn-search {
+  border-radius: 8px;
+  padding: 8px 18px;
+  white-space: nowrap;
+}
+
+/* Focus styles for accessibility */
+.search-box .form-control:focus,
+.search-box .form-select:focus,
+.search-box .btn-search:focus {
+  outline: none;
+  box-shadow: 0 0 0 0.14rem rgba(27,89,164,0.18);
+}
+
+/* Make sure icons and text don't overflow on very small screens */
+@media (max-width: 520px) {
+  .search-box .form-select { min-width: 120px; max-width: 40%; }
+  .search-box { gap: 8px; padding: 6px; }
+  .search-box .btn-search { padding: 6px 12px; }
+}
+    @media(min-width:992px){
+      .hero-heading{font-size:3.2rem}
+    }
+    .logo-placeholder{width:100px;height:30px;background:#eef2ff;border-radius:6px}
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="navbar navbar-expand-lg navbar-light bg-white py-3">
+  <div class="container">
+    <a class="navbar-brand d-flex align-items-center gap-2" href="#">
+      <img src="src/images/1.png" style="height: 80px; object-fit:contain;" alt="Brand">
+      <span class="fw-bold" style="color: #212529;">JobsInArmenia</span>
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navMenu">
+      <ul class="navbar-nav ms-auto align-items-center">
+        <li class="nav-item"><a class="nav-link" href="#">Find Jobs</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">Browse Companies</a></li>
+        <li class="nav-item"><a class="btn btn-outline-primary ms-3" href="#">Login</a></li>
+        <li class="nav-item"><a class="btn btn-primary ms-2" href="#">Sign Up</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero py-5">
+  <div class="container">
+    <div class="row align-items-center gy-4">
+      <div class="col-lg-7">
+        <h1 class="hero-heading fw-bold">Discover<br>more than <span class="accent">5000+ Jobs</span></h1>
+        <p class="text-muted">Great platform for the job seeker that searching for new career heights and passionate about startups.</p>
+
+        
+       <div class="mt-4 search-box">
+  <div class="input-group" role="search" aria-label="Job search">
+    <span class="input-group-text" aria-hidden="true"><i class="bi bi-search"></i></span>
+    <input class="form-control" type="search" placeholder="Job title or keyword"
+           aria-label="Job title or keyword" />
+  </div>
+
+  <select class="form-select" aria-label="Location select">
+    <option value="florence">Florence, Italy</option>
+    <option value="sf">San Francisco, US</option>
+    <option value="remote">Remote</option>
+  </select>
+
+  <button class="btn btn-primary btn-search" type="submit">Search</button>
+</div>
+
+        <small class="d-block text-muted mt-2">Popular: UI Designer, UX Researcher, Android, Admin</small>
+
+        <div class="d-flex align-items-center gap-4 mt-5">
+          <div class="logo-placeholder"></div>
+          <div class="logo-placeholder"></div>
+          <div class="logo-placeholder"></div>
+          <div class="logo-placeholder"></div>
+          <div class="logo-placeholder"></div>
+        </div>
+      </div>
+
+      <div class="col-lg-5 d-none d-lg-block">
+        <!-- hero illustration placeholder -->
+        <div style="height:320px;border-radius:16px;background:linear-gradient(135deg,#f3f5ff,#fff);box-shadow:0 10px 30px rgba(31,30,57,0.06);display:flex;align-items:center;justify-content:center">
+          <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=800&auto=format&fit=crop&ixlib=rb-4.0.3&s=placeholder" alt="hero" style="max-height:90%;border-radius:12px">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CATEGORIES -->
+<section class="py-5">
+  <div class="container">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+      <h3 class="fw-bold">Explore by <span class="accent">category</span></h3>
+      <a href="#" class="text-decoration-none">Show all jobs <i class="bi bi-arrow-right"></i></a>
+    </div>
+
+    <div class="row g-3">
+      <!-- 8 category cards in grid -->
+      <div class="col-6 col-md-3">
+        <div class="category-card h-100">
+          <div class="d-flex align-items-center justify-content-between">
+            <div>
+              <h6 class="mb-1">Design</h6>
+              <small class="text-muted">235 jobs available</small>
+            </div>
+            <i class="bi bi-paint-bucket fs-3 text-muted"></i>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-6 col-md-3">
+        <div class="category-card h-100">
+          <div class="d-flex align-items-center justify-content-between">
+            <div>
+              <h6 class="mb-1">Sales</h6>
+              <small class="text-muted">756 jobs available</small>
+            </div>
+            <i class="bi bi-bar-chart-line fs-3 text-muted"></i>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-6 col-md-3">
+        <div class="category-card h-100 bg-primary text-white" style="border:none">
+          <div class="d-flex align-items-center justify-content-between">
+            <div>
+              <h6 class="mb-1">Marketing</h6>
+              <small>140 jobs available</small>
+            </div>
+            <i class="bi bi-megaphone fs-3"></i>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-6 col-md-3">
+        <div class="category-card h-100">
+          <div class="d-flex align-items-center justify-content-between">
+            <div>
+              <h6 class="mb-1">Finance</h6>
+              <small class="text-muted">325 jobs available</small>
+            </div>
+            <i class="bi bi-wallet2 fs-3 text-muted"></i>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-6 col-md-3">
+        <div class="category-card h-100">
+          <div class="d-flex align-items-center justify-content-between">
+            <div>
+              <h6 class="mb-1">Technology</h6>
+              <small class="text-muted">436 jobs available</small>
+            </div>
+            <i class="bi bi-laptop fs-3 text-muted"></i>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-6 col-md-3">
+        <div class="category-card h-100">
+          <div class="d-flex align-items-center justify-content-between">
+            <div>
+              <h6 class="mb-1">Engineering</h6>
+              <small class="text-muted">542 jobs available</small>
+            </div>
+            <i class="bi bi-code fs-3 text-muted"></i>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-6 col-md-3">
+        <div class="category-card h-100">
+          <div class="d-flex align-items-center justify-content-between">
+            <div>
+              <h6 class="mb-1">Business</h6>
+              <small class="text-muted">211 jobs available</small>
+            </div>
+            <i class="bi bi-briefcase fs-3 text-muted"></i>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-6 col-md-3">
+        <div class="category-card h-100">
+          <div class="d-flex align-items-center justify-content-between">
+            <div>
+              <h6 class="mb-1">Human Resource</h6>
+              <small class="text-muted">346 jobs available</small>
+            </div>
+            <i class="bi bi-people fs-3 text-muted"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA FEATURE -->
+<section class="py-4">
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-lg-7">
+        <div class="feature-cta">
+          <h4 class="fw-bold">Start posting jobs today</h4>
+          <p class="mb-3">Start posting jobs for only $10.</p>
+          <a class="btn btn-light" href="#">Sign Up For Free</a>
+        </div>
+      </div>
+      <div class="col-lg-5 d-none d-lg-block">
+        <div class="p-3 bg-white rounded shadow-sm">
+          <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?q=80&w=900&auto=format&fit=crop&s=placeholder" alt="dashboard" style="width:100%;border-radius:8px">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURED JOBS -->
+<section class="py-5">
+  <div class="container">
+    <div class="d-flex justify-content-between align-items-center mb-3">
+      <h3 class="fw-bold">Featured <span class="accent">jobs</span></h3>
+      <a href="#" class="text-decoration-none">Show all jobs <i class="bi bi-arrow-right"></i></a>
+    </div>
+
+    <div class="row g-3">
+      <!-- 8 small job cards -->
+      <div class="col-12 col-md-6 col-lg-3">
+        <div class="job-card h-100">
+          <div class="d-flex justify-content-between align-items-start">
+            <div>
+              <h6 class="mb-1">Email Marketing</h6>
+              <small class="text-muted">Revolut • Madrid, Spain</small>
+            </div>
+            <span class="job-badge">Full Time</span>
+          </div>
+          <p class="text-muted mt-2">Revolut is looking for Email Marketing to help team ...</p>
+          <div class="d-flex gap-2 mt-2">
+            <span class="badge bg-light text-dark border">Marketing</span>
+            <span class="badge bg-light text-dark border">Design</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Duplicate a few times (you can dynamic render in a real project) -->
+      <div class="col-12 col-md-6 col-lg-3">
+        <div class="job-card h-100">
+          <div class="d-flex justify-content-between align-items-start">
+            <div>
+              <h6 class="mb-1">Brand Designer</h6>
+              <small class="text-muted">Dropbox • San Francisco, US</small>
+            </div>
+            <span class="job-badge">Full Time</span>
+          </div>
+          <p class="text-muted mt-2">Dropbox is looking for Brand Designer to help the team ...</p>
+          <div class="d-flex gap-2 mt-2">
+            <span class="badge bg-light text-dark border">Design</span>
+            <span class="badge bg-light text-dark border">Business</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-12 col-md-6 col-lg-3">
+        <div class="job-card h-100">
+          <div class="d-flex justify-content-between align-items-start">
+            <div>
+              <h6 class="mb-1">Email Marketing</h6>
+              <small class="text-muted">Pitch • Berlin, Germany</small>
+            </div>
+            <span class="job-badge">Full Time</span>
+          </div>
+          <p class="text-muted mt-2">Pitch is looking for Customer Manager to join marketing ...</p>
+          <div class="d-flex gap-2 mt-2">
+            <span class="badge bg-light text-dark border">Marketing</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-12 col-md-6 col-lg-3">
+        <div class="job-card h-100">
+          <div class="d-flex justify-content-between align-items-start">
+            <div>
+              <h6 class="mb-1">Visual Designer</h6>
+              <small class="text-muted">Blinkist • Granada, Spain</small>
+            </div>
+            <span class="job-badge">Full Time</span>
+          </div>
+          <p class="text-muted mt-2">Blinkist is looking for Visual Designer to help team ...</p>
+          <div class="d-flex gap-2 mt-2">
+            <span class="badge bg-light text-dark border">Design</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LATEST JOBS LIST -->
+<section class="py-5 bg-light">
+  <div class="container">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+      <h3 class="fw-bold">Latest <span class="accent">jobs open</span></h3>
+      <a href="#" class="text-decoration-none">Show all jobs <i class="bi bi-arrow-right"></i></a>
+    </div>
+
+    <div class="row g-3">
+      <div class="col-12 col-md-6">
+        <div class="d-flex align-items-center justify-content-between p-3 bg-white rounded shadow-sm">
+          <div>
+            <h6 class="mb-1">Social Media Assistant</h6>
+            <small class="text-muted">Nomad • Paris, France</small>
+          </div>
+          <div class="text-end">
+            <div><span class="badge bg-light text-dark border">Full-Time</span></div>
+            <div class="mt-2"><small class="text-muted">Marketing · Design</small></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-12 col-md-6">
+        <div class="d-flex align-items-center justify-content-between p-3 bg-white rounded shadow-sm">
+          <div>
+            <h6 class="mb-1">Brand Designer</h6>
+            <small class="text-muted">Dropbox • San Francisco, USA</small>
+          </div>
+          <div class="text-end">
+            <div><span class="badge bg-light text-dark border">Full-Time</span></div>
+            <div class="mt-2"><small class="text-muted">Marketing · Design</small></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- more rows can be duplicated similarly -->
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="pt-5 pb-4">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4 mb-3">
+        <h5 class="text-white">JobHuntly</h5>
+        <p class="small">Great platform for the job seeker that passionate about startups. Find your dream job easier.</p>
+      </div>
+      <div class="col-md-2 mb-3">
+        <h6>About</h6>
+        <ul class="list-unstyled small">
+          <li>Companies</li>
+          <li>Pricing</li>
+          <li>Terms</li>
+        </ul>
+      </div>
+      <div class="col-md-3 mb-3">
+        <h6>Resources</h6>
+        <ul class="list-unstyled small">
+          <li>Help Docs</li>
+          <li>Guide</li>
+          <li>Contact Us</li>
+        </ul>
+      </div>
+      <div class="col-md-3 mb-3">
+        <h6>Get job notifications</h6>
+        <form class="d-flex mt-2">
+          <input class="form-control me-2" placeholder="Email Address">
+          <button class="btn btn-primary">Subscribe</button>
+        </form>
+      </div>
+    </div>
+
+    <div class="border-top mt-4 pt-3 small text-muted">© 2024 JobHuntly. All rights reserved.</div>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
